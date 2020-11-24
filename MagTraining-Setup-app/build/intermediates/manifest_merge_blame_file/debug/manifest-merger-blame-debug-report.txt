@@ -1,0 +1,231 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.brcm.apim.magtraining"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+11-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:5:5-78
+11-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:5:22-76
+12    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+12-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:6:5-74
+12-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:6:22-72
+13    <uses-permission android:name="android.permission.BLUETOOTH" />
+13-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:7:5-68
+13-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:7:22-65
+14    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+14-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:8:5-74
+14-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:8:22-71
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:9:5-67
+15-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:9:22-64
+16    <uses-permission android:name="android.permission.NFC" />
+16-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:10:5-62
+16-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:10:22-59
+17    <uses-permission
+17-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:18:5-20:38
+18        android:name="android.permission.AUTHENTICATE_ACCOUNTS"
+18-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:19:9-64
+19        android:maxSdkVersion="22" />
+19-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:20:9-35
+20    <uses-permission
+20-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:21:5-23:38
+21        android:name="android.permission.GET_ACCOUNTS"
+21-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:22:9-55
+22        android:maxSdkVersion="22" />
+22-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:23:9-35
+23    <uses-permission android:name="android.permission.WAKE_LOCK" />
+23-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:25:5-68
+23-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:25:22-65
+24
+25    <application
+25-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:13:5-42:19
+26        android:allowBackup="true"
+26-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:14:9-35
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.1.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
+28        android:debuggable="true"
+29        android:icon="@mipmap/ic_launcher"
+29-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:15:9-43
+30        android:label="@string/app_name"
+30-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:16:9-41
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:17:9-54
+32        android:supportsRtl="true"
+32-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:18:9-35
+33        android:testOnly="true"
+34        android:theme="@style/AppTheme" >
+34-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:19:9-40
+35        <activity android:name="com.brcm.apim.magtraining.MainActivity" >
+35-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:20:9-26:20
+35-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:20:19-47
+36            <intent-filter>
+36-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:21:13-25:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:22:17-69
+37-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:22:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:24:17-77
+39-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:24:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <service
+43-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:28:9-40:19
+44            android:name="com.ca.mas.core.storage.sharedstorage.MASAuthenticatorService"
+44-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:29:13-89
+45            android:exported="false" >
+45-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:30:13-37
+46            <intent-filter>
+46-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:31:13-33:29
+47                <action android:name="android.accounts.AccountAuthenticator" />
+47-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:32:17-80
+47-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:32:25-77
+48            </intent-filter>
+49
+50            <meta-data
+50-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:34:13-36:55
+51                android:name="account.name"
+51-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:35:17-44
+52                android:resource="@string/acc_name" />
+52-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:36:17-52
+53            <meta-data
+53-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:37:13-39:57
+54                android:name="android.accounts.AccountAuthenticator"
+54-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:38:17-69
+55                android:resource="@xml/authenticator" />
+55-->/Users/abhisheknaidu/Documents/New_Sample_Apps/SampleApp-MagTraining-Setup/MagTraining-Setup-app/src/main/AndroidManifest.xml:39:17-54
+56        </service>
+57
+58        <activity
+58-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:23:9-26:54
+59            android:name="com.ca.mas.ui.MASEnterpriseWebApplicationActivity"
+59-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:24:13-77
+60            android:exported="false"
+60-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:25:13-37
+61            android:theme="@style/Theme.AppCompat" />
+61-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:26:13-51
+62        <activity
+62-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:27:9-36:20
+63            android:name="com.ca.mas.ui.MASSessionUnlockActivity"
+63-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:28:13-66
+64            android:exported="false"
+64-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:29:13-37
+65            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+65-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:30:13-69
+66            <intent-filter>
+66-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:31:13-35:29
+67                <action android:name="MASUI.intent.action.SessionUnlock" />
+67-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:32:17-76
+67-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:32:25-73
+68
+69                <category android:name="android.intent.category.DEFAULT" />
+69-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:17-76
+69-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:27-73
+70            </intent-filter>
+71        </activity>
+72        <activity android:name="net.openid.appauth.RedirectUriReceiverActivity" >
+72-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:37:9-56:20
+72-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:38:13-74
+73            <intent-filter>
+73-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:40:13-47:29
+74                <action android:name="android.intent.action.VIEW" />
+74-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:41:17-69
+74-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:41:25-66
+75
+76                <category android:name="android.intent.category.DEFAULT" />
+76-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:17-76
+76-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:27-73
+77                <category android:name="android.intent.category.BROWSABLE" />
+77-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:44:17-78
+77-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:44:27-75
+78
+79                <data android:scheme="camsso" />
+79-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:46:17-49
+79-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:46:23-46
+80            </intent-filter>
+81            <intent-filter>
+81-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:48:13-55:29
+82                <action android:name="android.intent.action.VIEW" />
+82-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:41:17-69
+82-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:41:25-66
+83
+84                <category android:name="android.intent.category.DEFAULT" />
+84-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:17-76
+84-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:34:27-73
+85                <category android:name="android.intent.category.BROWSABLE" />
+85-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:44:17-78
+85-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:44:27-75
+86
+87                <data android:scheme="camssoras" />
+87-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:46:17-49
+87-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:46:23-46
+88            </intent-filter>
+89        </activity>
+90        <activity
+90-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:57:9-60:72
+91            android:name="com.ca.mas.ui.MASOAuthRedirectActivity"
+91-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:58:13-66
+92            android:exported="false"
+92-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:59:13-37
+93            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+93-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:60:13-69
+94        <activity
+94-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:61:9-63:60
+95            android:name="com.ca.mas.ui.MASAppAuthRedirectHandlerActivity"
+95-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:62:13-75
+96            android:theme="@style/Theme.AppCompat.Light" />
+96-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:63:13-57
+97        <activity android:name="com.ca.mas.ui.MASFinishActivity" />
+97-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:64:9-68
+97-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:64:19-65
+98        <activity
+98-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:65:9-69:60
+99            android:name="com.ca.mas.ui.MASLoginActivity"
+99-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:66:13-58
+100            android:exported="false"
+100-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:67:13-37
+101            android:launchMode="singleTop"
+101-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:68:13-43
+102            android:theme="@style/Theme.AppCompat.Light" />
+102-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:69:13-57
+103        <activity
+103-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:70:9-74:67
+104            android:name="com.ca.mas.ui.otp.MASOtpActivity"
+104-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:71:13-60
+105            android:exported="false"
+105-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:72:13-37
+106            android:launchMode="singleTop"
+106-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:73:13-43
+107            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+107-->[com.ca:masui:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/5af315ff5c623a1ffdad1acb8f88db2e/masui-2.1.00/AndroidManifest.xml:74:13-64
+108
+109        <service
+109-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:30:9-33:72
+110            android:name="com.ca.mas.core.service.MssoService"
+110-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:31:13-63
+111            android:exported="false"
+111-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:32:13-37
+112            android:permission="android.permission.BIND_JOB_SERVICE" />
+112-->[com.ca:mas-foundation:2.1.00] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/95d8f5298fd7d423cab089f53e895c45/mas-foundation-2.1.00/AndroidManifest.xml:33:13-69
+113
+114        <activity
+114-->[net.openid:appauth:0.7.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e6e1289e2fff0011f2363de066792881/jetified-appauth-0.7.0/AndroidManifest.xml:27:9-31:75
+115            android:name="net.openid.appauth.AuthorizationManagementActivity"
+115-->[net.openid:appauth:0.7.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e6e1289e2fff0011f2363de066792881/jetified-appauth-0.7.0/AndroidManifest.xml:28:13-78
+116            android:exported="false"
+116-->[net.openid:appauth:0.7.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e6e1289e2fff0011f2363de066792881/jetified-appauth-0.7.0/AndroidManifest.xml:29:13-37
+117            android:launchMode="singleTask"
+117-->[net.openid:appauth:0.7.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e6e1289e2fff0011f2363de066792881/jetified-appauth-0.7.0/AndroidManifest.xml:30:13-44
+118            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+118-->[net.openid:appauth:0.7.0] /Users/abhisheknaidu/.gradle/caches/transforms-2/files-2.1/e6e1289e2fff0011f2363de066792881/jetified-appauth-0.7.0/AndroidManifest.xml:31:13-72
+119    </application>
+120
+121</manifest>
