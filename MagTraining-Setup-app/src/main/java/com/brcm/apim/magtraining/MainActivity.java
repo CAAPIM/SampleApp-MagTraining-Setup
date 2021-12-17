@@ -120,9 +120,7 @@ public class MainActivity extends AppCompatActivity {
         if (myMasState == MASConstants.MAS_STATE_STARTED)
             Log.d(TAG, "MAS SDK Successfully started");
 
-        //
         // Checking for connectivity
-        //
         MAS.gatewayIsReachable(new MASCallback<Boolean>() {
             @Override
             public void onSuccess(Boolean aBoolean) {
