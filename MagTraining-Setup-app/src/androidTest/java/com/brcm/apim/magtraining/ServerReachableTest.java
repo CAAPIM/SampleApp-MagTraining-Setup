@@ -38,7 +38,7 @@ public class ServerReachableTest {
             new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void UserAuthenticationWrongPassword() {
+    public void ServerReachableTest() {
 
         onView(withId(R.id.textViewApiStatus))
                 .check(matches(withText(getResourceString(R.string.server_reachable))));
