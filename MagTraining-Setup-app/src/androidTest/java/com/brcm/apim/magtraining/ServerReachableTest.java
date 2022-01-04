@@ -40,6 +40,7 @@ public class ServerReachableTest {
     }
 
 
+    /* This will launch the MainActivity */
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityRule =
             new ActivityScenarioRule<>(MainActivity.class);
