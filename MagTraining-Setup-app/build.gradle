@@ -39,14 +39,8 @@ dependencies {
     implementation 'com.google.zxing:android-integration:3.3.0'
 
     // MAS Specific Libraries
-//    implementation 'com.ca.mas.core:mas-foundation-release@aar'
-//    implementation 'com.ca:mas-foundation:2.1.00'
     implementation 'com.ca.apim:mas-foundation:2.2.0'
-//    implementation 'com.ca:masui:2.1.00' // (Optional) Only required when using MASUI Template. The MAS UI library provides sample user interfaces for Login, OTP, Social Login, and Enterprise Browser.
-//    implementation 'com.ca:mas-storage:2.1.00' // (Optional) Only required when using mas storage
     implementation 'com.ca.apim:masui:2.2.0'
-//    implementation 'com.ca.mas.ui:masui-release@aar'
-//    implementation 'com.ca.mas.core.storage:mas-storage-release@aar'
     implementation 'com.ca.apim:mas-storage:2.2.0'
 
     // Google Support libraries

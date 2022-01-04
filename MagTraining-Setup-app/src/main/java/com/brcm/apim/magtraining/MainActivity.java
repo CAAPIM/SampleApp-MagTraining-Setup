@@ -44,21 +44,12 @@ public class MainActivity extends AppCompatActivity {
         progressBarApp = findViewById(R.id.progressBarApp);
 
         //
-        // Start monitoring if the App goes into the background
-        //
-
-
-        //
         // Check the App Permissions based on the contents of the Manifest File
         //
-
         checkAppPermissions();
-
-
         //
         // We need to ensure the location service is available on the emulator and real device
         //
-
 
         LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
         boolean enabled = service
@@ -73,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-
             TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             String networkOperator = tm.getNetworkOperatorName();
             if ("Android".equals(networkOperator)) {
