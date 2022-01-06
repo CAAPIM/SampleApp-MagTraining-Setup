@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,37 +26,30 @@ import com.ca.mas.foundation.MASConstants;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
 
-    private String mEmulatorLocation=null;
+    private String mEmulatorLocation = null;
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    TextView textViewApiStatus;
+    ProgressBar progressBarApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_main );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        //
-        // Start monitoring if the App goes into the background
-        //
-
-
+        textViewApiStatus = findViewById(R.id.textViewApiStatus);
+        progressBarApp = findViewById(R.id.progressBarApp);
 
         //
         // Check the App Permissions based on the contents of the Manifest File
         //
-
         checkAppPermissions();
-
-
-
         //
         // We need to ensure the location service is available on the emulator and real device
         //
-
-
 
         LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
         boolean enabled = service
@@ -63,33 +59,32 @@ public class MainActivity extends AppCompatActivity  {
         // Better solution would be to display a dialog and suggesting to
         // go to the settings
         if (!enabled) {
-            Intent intent = new Intent( Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(intent);
         }
 
         try {
-
-            TelephonyManager tm = (TelephonyManager)getSystemService( Context.TELEPHONY_SERVICE);
+            TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             String networkOperator = tm.getNetworkOperatorName();
             if ("Android".equals(networkOperator)) {
                 //
                 // Emulator
                 //
                 LocationManager locationManager = (LocationManager) getApplicationContext()
-                        .getSystemService( Context.LOCATION_SERVICE );
+                        .getSystemService(Context.LOCATION_SERVICE);
                 Location lastKnownLocation = locationManager
-                        .getLastKnownLocation( LocationManager.GPS_PROVIDER );
+                        .getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-                if (lastKnownLocation != null){
+                if (lastKnownLocation != null) {
                     mEmulatorLocation = String.format("%f,%f", lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
                     //                   mEmulatorLocation = String.format("%f,%f",47.6773745,-122.3250831);
 
-                    Log.d(TAG,"Last Known Location: [" + mEmulatorLocation + "]");
+                    Log.d(TAG, "Last Known Location: [" + mEmulatorLocation + "]");
                 }
 
-                Log.d(TAG,"Emulator is being used: [" + mEmulatorLocation + "]");
+                Log.d(TAG, "Emulator is being used: [" + mEmulatorLocation + "]");
             } else
-                Log.d(TAG,"Real device Location is being used: [" + mEmulatorLocation + "]");
+                Log.d(TAG, "Real device Location is being used: [" + mEmulatorLocation + "]");
 
         } catch (SecurityException e) {
             e.printStackTrace();
@@ -106,26 +101,47 @@ public class MainActivity extends AppCompatActivity  {
         //
 
         MAS.start(this);
+        if (BuildConfig.DEBUG) {
+            CountingIdlingResourceSingleton.increment();
+        }
 
-        int myMasState = MAS.getState( this );
+        int myMasState = MAS.getState(this);
 
-        if ( myMasState == MASConstants.MAS_STATE_STARTED )
-            Log.d(TAG,"MAS SDK Successfully started");
+        if (myMasState == MASConstants.MAS_STATE_STARTED)
+            Log.d(TAG, "MAS SDK Successfully started");
 
-        //
         // Checking for connectivity
-        //
-        MAS.gatewayIsReachable( new MASCallback<Boolean>() {
+        MAS.gatewayIsReachable(new MASCallback<Boolean>() {
             @Override
             public void onSuccess(Boolean aBoolean) {
-                Log.d(TAG,"MAS Server is reachable!");
+                textViewApiStatus.setText(getString(R.string.server_reachable));
+                if (BuildConfig.DEBUG) {
+                    CountingIdlingResourceSingleton.decrement();
+                }
+
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        progressBarApp.setVisibility(View.GONE);
+                    }
+                });
+
+                Log.d(TAG, "MAS Server is reachable!");
             }
 
             @Override
             public void onError(Throwable throwable) {
+                textViewApiStatus.setText("MAS Server is not reachable!");
 
+                if (BuildConfig.DEBUG) {
+                    CountingIdlingResourceSingleton.decrement();
+                }
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        progressBarApp.setVisibility(View.GONE);
+                    }
+                });
             }
-        } );
+        });
 
 
         MAS.debug();
@@ -140,45 +156,44 @@ public class MainActivity extends AppCompatActivity  {
 
 
         String criticalPermission = null;
-         for (int currGrant=0; currGrant < grantResults.length; currGrant++)
-         {
-             if (grantResults[currGrant] == PackageManager.PERMISSION_GRANTED) {
-                 Toast.makeText( MainActivity.this, permissions[currGrant] + " Permission Granted!", Toast.LENGTH_SHORT ).show();
-             } else {
-                 criticalPermission = permissions[currGrant];
-                 break;
-             }
-         }
+        for (int currGrant = 0; currGrant < grantResults.length; currGrant++) {
+            if (grantResults[currGrant] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(MainActivity.this, permissions[currGrant] + " Permission Granted!", Toast.LENGTH_SHORT).show();
+            } else {
+                criticalPermission = permissions[currGrant];
+                break;
+            }
+        }
 
         if (criticalPermission != null) {
 
             final String tempPermission = criticalPermission;
-            runOnUiThread( new Runnable() {
-                               @Override
-                               public void run() {
-                                   try {
-                                       AlertDialog.Builder alertDialog = new AlertDialog.Builder( MainActivity.this );
-                                       alertDialog.setTitle( "ERROR!!" );
-                                       alertDialog.setMessage( "Application will exit as mandatory permission [" + tempPermission + "] was denied" );
-                                       alertDialog.setPositiveButton( "OK",
-                                               new DialogInterface.OnClickListener() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                        alertDialog.setTitle("ERROR!!");
+                        alertDialog.setMessage("Application will exit as mandatory permission [" + tempPermission + "] was denied");
+                        alertDialog.setPositiveButton("OK",
+                                new DialogInterface.OnClickListener() {
 
-                                                   @Override
-                                                   public void onClick(DialogInterface arg0, int arg1) {
-                                                       android.os.SystemClock.sleep( 1000 );
-                                                       moveTaskToBack( true );
-                                                       android.os.Process.killProcess( android.os.Process.myPid() );
-                                                       System.exit( 1 );
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        android.os.SystemClock.sleep(1000);
+                                        moveTaskToBack(true);
+                                        android.os.Process.killProcess(android.os.Process.myPid());
+                                        System.exit(1);
 
-                                                   }
-                                               } );
-                                       alertDialog.show();
-                                   } catch (Exception e) {
-                                       Log.d( TAG, e.getMessage().toString() );
-                                       e.printStackTrace();
-                                   }
+                                    }
+                                });
+                        alertDialog.show();
+                    } catch (Exception e) {
+                        Log.d(TAG, e.getMessage().toString());
+                        e.printStackTrace();
+                    }
 
-                               }
+                }
 
             });
         }
@@ -186,34 +201,32 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-
     //
     // Check the app permissions before startup of the App
     //
 
-    final int PERMISSION_ALL=1;
+    final int PERMISSION_ALL = 1;
 
     private void checkAppPermissions() {
 
         String[] registeredPermissions = null;
         ArrayList<String> requiredPermissions = new ArrayList<String>();
-        try
-        {
-            registeredPermissions= getApplicationContext().getPackageManager()
-                    .getPackageInfo( getApplicationContext().getPackageName(), PackageManager.GET_PERMISSIONS )
+        try {
+            registeredPermissions = getApplicationContext().getPackageManager()
+                    .getPackageInfo(getApplicationContext().getPackageName(), PackageManager.GET_PERMISSIONS)
                     .requestedPermissions;
             Log.d(TAG, "Got the manifest permissions");
         } catch (PackageManager.NameNotFoundException e) {
 
         }
 
-        boolean permissionsNecessary=false;
-        for (int permissionsCount=0; permissionsCount < registeredPermissions.length; permissionsCount++) {
+        boolean permissionsNecessary = false;
+        for (int permissionsCount = 0; permissionsCount < registeredPermissions.length; permissionsCount++) {
             if (ContextCompat.checkSelfPermission(this, registeredPermissions[permissionsCount]) != PackageManager.PERMISSION_GRANTED) {
                 // Permission is not granted
                 if (!permissionsNecessary)
                     permissionsNecessary = true;
-                requiredPermissions.add( registeredPermissions[permissionsCount] );
+                requiredPermissions.add(registeredPermissions[permissionsCount]);
 
             }
         }
@@ -221,7 +234,7 @@ public class MainActivity extends AppCompatActivity  {
             String[] requiredPermissionsStrArray = new String[requiredPermissions.size()];
 
             requiredPermissionsStrArray = requiredPermissions.toArray(requiredPermissionsStrArray);
-            ActivityCompat.requestPermissions( this, requiredPermissionsStrArray, PERMISSION_ALL );
+            ActivityCompat.requestPermissions(this, requiredPermissionsStrArray, PERMISSION_ALL);
         }
 
 
